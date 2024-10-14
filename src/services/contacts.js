@@ -21,3 +21,16 @@ export const deleteContact = async (contactId) => {
   });
   return contact;
 };
+
+export const editContact = async (contactId, payload) => {
+  const contact = await ContactsCollection.findOneAndUpdate(
+    {
+      _id: contactId,
+    },
+    payload,
+    {
+      new: true,
+    },
+  );
+  return contact;
+};
