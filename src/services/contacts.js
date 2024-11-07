@@ -46,7 +46,10 @@ export const getContactById = async (contactId, userId) => {
 };
 
 export const createContact = async (payload) => {
-  const newContact = await ContactsCollection.create(payload);
+  const newContact = await ContactsCollection.create({
+    ...payload,
+    photo: payload.photo,
+  });
   return newContact;
 };
 
@@ -58,13 +61,32 @@ export const deleteContact = async (contactId, userId) => {
   return contact;
 };
 
-export const editContact = async (contactId, userId, payload) => {
+// export const editContact = async (contactId, userId, payload, photoUrl) => {
+//   const contact = await ContactsCollection.findOneAndUpdate(
+//     {
+//       _id: contactId,
+//       userId,
+//     },
+//     { ...payload, photo: photoUrl },
+//     {
+//       new: true,
+//     },
+//   );
+//   return contact;
+// };
+
+export const editContact = async (contactId, userId, payload, photoUrl) => {
+  const updateData = { ...payload };
+  if (photoUrl) {
+    updateData.photo = photoUrl;
+  }
+
   const contact = await ContactsCollection.findOneAndUpdate(
     {
       _id: contactId,
       userId,
     },
-    payload,
+    updateData,
     {
       new: true,
     },
