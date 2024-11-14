@@ -1,5 +1,5 @@
 tags:
-  - Contact
+  - Contacts
 summary: Create contact
 operationId: createContact
 description: 'Create a contact with payload'
@@ -23,11 +23,26 @@ requestBody:
             description: "Contact's phoneNumber"
             type: number
             example: 12345678
+          email:
+            description: "Contact's email"
+            type: string
+            example: Afrodita@i.com
+          isFavourite:
+            description: "Contact's favorite"
+            type: boolean
           contactType:
             description: "Contact's contactType"
             type: string
             enum: ['work', 'home', 'personal']
             example: 'home'
+          userId:
+            description: "User's id"
+            type: string
+            example: 65ca67e7ae7f10c88b598384
+          photo:
+            description: "User's photo"
+            type: string
+            example: url
 responses:
   '201':
     description: Seccessfully created a contact

@@ -12,6 +12,9 @@
   "servers": [
     {
       "url": "http://localhost:3000"
+    },
+    {
+      "url": "https://contactsapp-1bud.onrender.com"
     }
   ],
   "tags": [
@@ -85,7 +88,7 @@
       },
       "patch": {
         "tags": [
-          "Contact"
+          "Contacts"
         ],
         "summary": "Edit contacts",
         "operationId": "editContact",
@@ -122,6 +125,15 @@
                     "type": "number",
                     "example": 12345678
                   },
+                  "email": {
+                    "description": "Contact's email",
+                    "type": "string",
+                    "example": "Afrodita@i.com"
+                  },
+                  "isFavourite": {
+                    "description": "Contact's favorite",
+                    "type": "boolean"
+                  },
                   "contactType": {
                     "description": "Contact's contactType",
                     "type": "string",
@@ -132,9 +144,10 @@
                     ],
                     "example": "work"
                   },
-                  "description": {
-                    "description": "Contact's description",
-                    "type": "string"
+                  "photo": {
+                    "description": "User's photo",
+                    "type": "string",
+                    "example": "url"
                   }
                 }
               }
@@ -187,7 +200,7 @@
       },
       "delete": {
         "tags": [
-          "Contact"
+          "Contacts"
         ],
         "summary": "Delete contact by id",
         "operationId": "deleteContact",
@@ -370,7 +383,7 @@
       },
       "post": {
         "tags": [
-          "Contact"
+          "Contacts"
         ],
         "summary": "Create contact",
         "operationId": "createContact",
@@ -401,6 +414,15 @@
                     "type": "number",
                     "example": 12345678
                   },
+                  "email": {
+                    "description": "Contact's email",
+                    "type": "string",
+                    "example": "Afrodita@i.com"
+                  },
+                  "isFavourite": {
+                    "description": "Contact's favorite",
+                    "type": "boolean"
+                  },
                   "contactType": {
                     "description": "Contact's contactType",
                     "type": "string",
@@ -410,6 +432,16 @@
                       "personal"
                     ],
                     "example": "home"
+                  },
+                  "userId": {
+                    "description": "User's id",
+                    "type": "string",
+                    "example": "65ca67e7ae7f10c88b598384"
+                  },
+                  "photo": {
+                    "description": "User's photo",
+                    "type": "string",
+                    "example": "url"
                   }
                 }
               }
@@ -486,10 +518,19 @@
             "type": "string",
             "example": "John Doe"
           },
+          "email": {
+            "description": "Contact's email",
+            "type": "string",
+            "example": "John Doe@i.com"
+          },
           "phoneNumber": {
             "description": "Contact's number",
             "type": "number",
             "example": 12345678
+          },
+          "isFavourite": {
+            "description": "Contact's favorite",
+            "type": "boolean"
           },
           "contactType": {
             "description": "Contact's type",
@@ -504,6 +545,11 @@
             "description": "User's id",
             "type": "string",
             "example": "65ca67e7ae7f10c88b598384"
+          },
+          "photo": {
+            "description": "User's photo",
+            "type": "string",
+            "example": "url"
           }
         }
       }

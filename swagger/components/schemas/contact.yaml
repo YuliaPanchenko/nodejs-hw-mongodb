@@ -13,10 +13,17 @@ properties:
     description: "Contact's name"
     type: string
     example: 'John Doe'
+  email:
+    description: "Contact's email"
+    type: string
+    example: John Doe@i.com
   phoneNumber:
     description: "Contact's number"
     type: number
     example: 12345678
+  isFavourite:
+    description: "Contact's favorite"
+    type: boolean
   contactType:
     description: "Contact's type"
     type: string
@@ -25,3 +32,7 @@ properties:
     description: "User's id"
     type: string
     example: 65ca67e7ae7f10c88b598384
+  photo:
+    description: "User's photo"
+    type: string
+    example: url
