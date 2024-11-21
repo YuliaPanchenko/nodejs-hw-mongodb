@@ -41,7 +41,7 @@ requestBody:
           photo:
             description: "User's photo"
             type: string
-            example: url
+            format: binary
 responses:
   '200':
     description: Edit a contact

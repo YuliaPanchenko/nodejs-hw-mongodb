@@ -147,7 +147,7 @@
                   "photo": {
                     "description": "User's photo",
                     "type": "string",
-                    "example": "url"
+                    "format": "binary"
                   }
                 }
               }
